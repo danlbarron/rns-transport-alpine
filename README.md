@@ -29,20 +29,20 @@ Boot your device with either the flashed USB drive or SD card. You might need to
 Once Alpine Linux boots, you'll be greeted by a terminal prompting you to log-in. The user name is `root` and there's no password. Once logged in, run `setup-alpine`.
 
 ### Steps for the Alpine Linux Installer (see also: [Alpine Linux Wiki Installation page](https://wiki.alpinelinux.org/wiki/Installation#Base_configuration))
-**Keyboard Layout**: Choose the keyboard layout and variant that best suites your keyboard. If you live in the United States, it'll likely be `us` for both.  
-**Hostname**: This will be the name of your computer. Come up with a cool hacker name (or don't, the choice is yours).  
-**Network Interface**: Available interfaces are `eth0` and `wlan0`, however, these options might change based on your hardware. I recommend using ethernet if at all possible. You'll be prompted a few additional questions on setting up the chosen network interface. Defaults are probably fine, but use your own discretion.  
-**Root Password**: Root will be the admin account, so you'll want to choose a strong password.  
-**Timezone**: Choose your local timezone. If you live in the US Central Timezone, you'd choose `US/` followed by `Central`.  
-**HTTP/FTP Proxy URL**: Choose `none`.  
-**Network Time Protocol**: Choose `chrony`, unless you know what you're doing.  
-**APK Mirror**: Choose the default, `1`, unless you know that you'll need to choose another mirror due to your region.  
-**Setup a user**: Enter a memoriable username (technically this is optional, but we're disabling root logins later).  
-**Enter ssh key or URL for user**: Choose `none`, unless you intend to use SSH.  
-**Which ssh server**: Choose `none`, unless you intend to use SSH. As a side note, you could also setup [rnsh](https://reticulum.network/manual/using.html#the-rnsh-utility) on your own later, but that's outside the scope of this guide.  
-**Which disk(s) would you like to use**: This is the disk/ssd drive you want to install to. Choose the relevant option that's shown as available. Typically this would be `sda`.  
-**How would you like to use it**: This is how you would like the disk/ssd drive to be configured. The options are `sys`, `data`, `crypt`, `cryptsys`, `lvm`, `lvmsys`, and `lvmdata`. Choose `lvmsys`, unless you know what you're doing. You can also enter `?` to learn more.  
-**WARNING: Erase the above disk(s) and continue (y/n)**: This is the point of no return. Unless you think you need to go back to choose a different option in a prior step, choose `y`.
+***Keyboard Layout***: Choose the keyboard layout and variant that best suites your keyboard. If you live in the United States, it'll likely be `us` for both.  
+***Hostname***: This will be the name of your computer. Come up with a cool hacker name (or don't, the choice is yours).  
+***Network Interface***: Available interfaces are `eth0` and `wlan0`, however, these options might change based on your hardware. I recommend using ethernet if at all possible. You'll be prompted a few additional questions on setting up the chosen network interface. Defaults are probably fine, but use your own discretion.  
+***Root Password***: Root will be the admin account, so you'll want to choose a strong password.  
+***Timezone***: Choose your local timezone. If you live in the US Central Timezone, you'd choose `US/` followed by `Central`.  
+***HTTP/FTP Proxy URL***: Choose `none`.  
+***Network Time Protocol***: Choose `chrony`, unless you know what you're doing.  
+***APK Mirror***: Choose the default, `1`, unless you know that you'll need to choose another mirror due to your region.  
+***Setup a user***: Enter a memoriable username (technically this is optional, but we're disabling root logins later).  
+***Enter ssh key or URL for user***: Choose `none`, unless you intend to use SSH.  
+***Which ssh server***: Choose `none`, unless you intend to use SSH. As a side note, you could also setup [rnsh](https://reticulum.network/manual/using.html#the-rnsh-utility) on your own later, but that's outside the scope of this guide.  
+***Which disk(s) would you like to use***: This is the disk/ssd drive you want to install to. Choose the relevant option that's shown as available. Typically this would be `sda`.  
+***How would you like to use it***: This is how you would like the disk/ssd drive to be configured. The options are `sys`, `data`, `crypt`, `cryptsys`, `lvm`, `lvmsys`, and `lvmdata`. Choose `lvmsys`, unless you know what you're doing. You can also enter `?` to learn more.  
+***WARNING: Erase the above disk(s) and continue (y/n)***: This is the point of no return. Unless you think you need to go back to choose a different option in a prior step, choose `y`.
 
 Once the installation is complete, type `reboot`. Congratulations on your fresh install of Alpine Linux!
 
