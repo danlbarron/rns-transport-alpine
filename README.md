@@ -52,7 +52,7 @@ Once in, type `doas -s`. This command will require your password, which in turn,
 Let's disable the login for root by entering `passwd -l root`.  
 Let's also add a standard user that will be used for running the rnsd daemon by entering `adduser rnsuser`. The reason we create another user is we want the user to adhere to the [principle of least privilege](https://en.wikipedia.org/wiki/Principle_of_least_privilege) by not being able to escalate permissions to act as root. You can also disable the login for rnsuser if you'd like by entering `passwd -l rnsuser`.
 
-Now the star of the show, let's run the installation script:
+Now for the star of the show, let's run the installation script:
 ```shell
 cd ~
 wget https://raw.githubusercontent.com/danlbarron/rns-transport-alpine/refs/heads/main/install.sh
