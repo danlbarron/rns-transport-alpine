@@ -4,7 +4,7 @@
 COMMUNITY_REPO=https://dl-cdn.alpinelinux.org/alpine/latest-stable/community
 RNS_DAEMON_USER=rnsuser
 RNS_DAEMON_PATH=/etc/init.d/rnsd
-CRONJOB_PATH=/etc/periodic/do-updates
+CRONJOB_PATH=/etc/periodic/daily/do-updates
 
 # Logging
 RED='\033[0;31m'
