@@ -69,5 +69,5 @@ nano /home/rnsuser/.reticulum/config
 vi /home/rnsuser/.reticulum/config
 ```
 
-After updating the config, you'll want to restart the daemon via `rc-service rnsd restart`
+After updating the config, you'll want to restart the daemon via `rc-service rnsd restart`. Be sure to type `exit` or `reboot` to ensure you fully logout.  
 Congratulations, you now have a Reticulum Transport Node!
