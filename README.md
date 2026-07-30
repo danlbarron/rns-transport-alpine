@@ -60,7 +60,7 @@ chmod +x install.sh
 ./install.sh
 ```
 
-You'll need to configure the reticulum config file, by setting `enable_transport = true` and locating a public gateway off of https://rmap.world or https://directory.rns.recipes and copying it's config to the bottom of the config file.
+You'll need to configure the reticulum config file, first setting `enable_transport = true`, and then locating a public gateway off of https://rmap.world or https://directory.rns.recipes, and copying it's config to the bottom of the config file.
 ```shell
 apk add nano
 nano /home/rnsuser/.reticulum/config
