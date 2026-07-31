@@ -19,7 +19,7 @@ An example of a network would be like a small home network. Most end-user device
 As far as hardware provisioning, something like a Raspberry Pi should more than suffice as a hardware platform, as Reticulum is designed for low bandwidth and high latency.
 
 ## Installation Overview
-First, this guide will walk you through the process of installing Alpine Linux. After Alpine Linux is installed and configured. There's a installation script that will handle the process of installing the rnsd daemon and a cron job to handle unattended system updates. This guide will cover configuring communication interfaces using Ethernet/WiFi. Configuring radio interfaces like LoRa is outside the scope of this installation guide.
+First, this guide will walk you through the process of installing Alpine Linux. After Alpine Linux is installed and configured, there's a installation script that will handle the process of installing the rnsd daemon and a cron job to handle unattended system updates. This guide will cover configuring communication interfaces using Ethernet/WiFi. Configuring radio interfaces like LoRa is outside the scope of this installation guide.
 
 ## Installing Alpine Linux
 Download the [Alpine Linux image](https://alpinelinux.org/downloads) that suites the device you intend to install on. You want an image that ends in .iso or .img.gz.  
