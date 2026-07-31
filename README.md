@@ -22,8 +22,8 @@ As far as hardware provisioning, something like a Raspberry Pi should more than 
 First, this guide will walk you through the process of installing Alpine Linux. After Alpine Linux is installed and configured. There's a installation script that will handle the process of installing the rnsd daemon and a cron job to handle unattended system updates. This guide will cover configuring communication interfaces using Ethernet/WiFi. Configuring radio interfaces like LoRa is outside the scope of this installation guide.
 
 ## Installing Alpine Linux
-Download the [Alpine Linux image](https://alpinelinux.org/downloads) that suites the device you intend to install on. You want an image that ends in .iso or .img.gz.
-Download [balenaEtcher](https://etcher.balena.io) and use it to flash the chosen image to either a USB drive or an SD card, depending on your needs (PC/Laptop or Raspberry Pi).
+Download the [Alpine Linux image](https://alpinelinux.org/downloads) that suites the device you intend to install on. You want an image that ends in .iso or .img.gz.  
+Download [balenaEtcher](https://etcher.balena.io) and use it to flash the chosen image to either a USB drive or an SD card, depending on your needs (PC/Laptop or Raspberry Pi).  
 Boot your device with either the flashed USB drive or SD card. You might need to get instructions from the device's manufacturer on how to boot from a USB drive / SD card.
 
 Once Alpine Linux boots, you'll be greeted by a terminal prompting you to log-in. The user name is `root` and there's no password. Once logged in, run `setup-alpine`.
