@@ -22,16 +22,16 @@ As far as hardware provisioning, something like a Raspberry Pi should more than 
 First, this guide will walk you through the process of installing Alpine Linux. After Alpine Linux is installed and configured, there's a installation script that will handle the process of installing the rnsd daemon and a cron job to handle unattended system updates. This guide will cover configuring communication interfaces using Ethernet/WiFi. Configuring radio interfaces like LoRa is outside the scope of this installation guide.
 
 ## Installing Alpine Linux
-Download the [Alpine Linux image](https://alpinelinux.org/downloads) that suites the device you intend to install on. You want an image that ends in .iso or .img.gz.  
-Download [balenaEtcher](https://etcher.balena.io) and use it to flash the chosen image to either a USB drive or an SD card, depending on your needs (PC/Laptop or Raspberry Pi).  
+Download the [Alpine Linux image](https://alpinelinux.org/downloads) for the device you're going to install on. You'll want an image that ends in `.iso` or `.img.gz`.  
+Download [balenaEtcher](https://etcher.balena.io) and use it to flash the downloaded image onto either a USB drive or an SD card, depending on your device (PC/Laptop or Raspberry Pi).  
 Boot your device with either the flashed USB drive or SD card. You might need to get instructions from the device's manufacturer on how to boot from a USB drive / SD card.
 
-Once Alpine Linux boots, you'll be greeted by a terminal prompting you to log-in. The user name is `root` and there's no password. Once logged in, run `setup-alpine`.
+Once Alpine Linux boots, you'll be greeted by the terminal prompting you to log-in. The user name is `root` and there's no password. Once logged in, run `setup-alpine`.
 
 ### Steps for the Alpine Linux Installer (see also: [Alpine Linux Wiki Installation page](https://wiki.alpinelinux.org/wiki/Installation#Base_configuration))
 ***Keyboard Layout***: Choose the keyboard layout and variant that best suites your keyboard. If you live in the United States, it'll likely be `us` for both.  
 ***Hostname***: This will be the name of your computer. Come up with a cool hacker name (or don't, the choice is yours).  
-***Network Interface***: Available interfaces are `eth0` and `wlan0`, however, these options might change based on your hardware. I recommend using ethernet if at all possible. You'll be prompted a few additional questions on setting up the chosen network interface. Defaults are probably fine, but use your own discretion.  
+***Network Interface***: Available interfaces are `eth0` and `wlan0`, however, these options might change based on your hardware. I recommend using ethernet when possible. You'll be prompted a few additional questions on setting up the chosen network interface. Defaults are probably fine, but use your own discretion.  
 ***Root Password***: Root will be the admin account, so you'll want to choose a strong password.  
 ***Timezone***: Choose your local timezone. If you live in the US Central Timezone, you'd choose `US/` followed by `Central`.  
 ***HTTP/FTP Proxy URL***: Choose `none`.  
@@ -47,8 +47,8 @@ Once Alpine Linux boots, you'll be greeted by a terminal prompting you to log-in
 Once the installation is complete, type `reboot`. Congratulations on your fresh install of Alpine Linux!
 
 ## Configuring Alpine Linux
-Once rebooted, you'll be greeted by a terminal prompting you to log-in. This time, choose the user account you created.  
-Once in, type `doas -s`. This command will require your password, which in turn, will escalate your permissions to act as root.  
+Once rebooted, you'll be greeted by the terminal prompting you to log-in. This time, choose the user account you created.  
+Once logged in, type `doas -s`. This command will require your password, which in turn, will escalate your permissions to act as root.  
 Let's disable the login for root by entering `passwd -l root`.  
 Let's also add a standard user that will be used for running the rnsd daemon by entering `adduser rnsuser`. The reason we create another user is we want the user to adhere to the [principle of least privilege](https://en.wikipedia.org/wiki/Principle_of_least_privilege) by not being able to escalate permissions to act as root. You can also disable the login for rnsuser if you'd like by entering `passwd -l rnsuser`.
 
