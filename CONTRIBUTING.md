@@ -30,7 +30,7 @@ Please make sure your code is up to modern practices, and be receptive to feedba
 
 Contributions written using large language models (LLMs) or other generative 'AI' programs are prohibited. LLMs produce errors so frequently and in a way that is so unlike human error that such issues are incredibly time-consuming to spot and fix.
 
-This applies to all rns-tranport-alpine related projects and documentation, as well as all submitted issues and discussions in official channels, except in cases where language translation and/or speech recogntion technologies are required for communication.
+This applies to all rns-tranport-alpine related projects and documentation, as well as all submitted issues and discussions in official channels, except in cases where language translation and/or speech recognition technologies are required for communication.
 
 ## Contributor License Agreement
 
