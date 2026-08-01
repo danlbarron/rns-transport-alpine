@@ -37,7 +37,7 @@ Once Alpine Linux boots, you'll be greeted by the terminal prompting you to log-
 ***HTTP/FTP Proxy URL***: Choose `none`.  
 ***Network Time Protocol***: Choose `chrony`, unless you know what you're doing.  
 ***APK Mirror***: Choose the default, `1`, unless you know that you'll need to choose another mirror due to your region.  
-***Setup a user***: Enter a memoriable username (technically this is optional, but we're disabling root logins later).  
+***Setup a user***: Enter a memorable username (technically this is optional, but we're disabling root logins later).  
 ***Enter ssh key or URL for user***: Choose `none`, unless you intend to use SSH.  
 ***Which ssh server***: Choose `none`, unless you intend to use SSH. As a side note, you could also setup [rnsh](https://reticulum.network/manual/using.html#the-rnsh-utility) on your own later, but that's outside the scope of this guide.  
 ***Which disk(s) would you like to use***: This is the disk/ssd drive you want to install to. Choose the relevant option that's shown as available. Typically this would be `sda`.  
