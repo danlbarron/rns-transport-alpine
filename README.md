@@ -8,9 +8,7 @@ This guide will:
 ## What is a Reticulum Transport Node
 Here is a quote from the [official documentation](https://reticulum.network/manual/networks.html#transport-nodes-and-instances):
 
-*Transport nodes forward packets across hops, propagate announces, maintain path tables, and serve path requests on behalf of other nodes. When a destination sends an announce, Transport Nodes receive it, remember the path, and rebroadcast it to other interfaces. When a node needs to reach a destination it doesn’t have a path for, Transport Nodes help resolve the path through the network.*
-
-~
+> Transport nodes forward packets across hops, propagate announces, maintain path tables, and serve path requests on behalf of other nodes. When a destination sends an announce, Transport Nodes receive it, remember the path, and rebroadcast it to other interfaces. When a node needs to reach a destination it doesn’t have a path for, Transport Nodes help resolve the path through the network.
 
 Transport nodes are more or less the equivalent of modems/routers in Reticulum networks. In practice, a network typically has a relatively small number of Transport Nodes strategically placed to provide coverage and connectivity. End-user devices run as Instances, connecting through nearby Transport Nodes to reach the wider network.
 
