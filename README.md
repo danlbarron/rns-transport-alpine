@@ -1,4 +1,4 @@
-# Reticulum Transport Node - Alpine Linux Installation Guide
+# Reticulum Transport Node - Alpine Linux Guide
 This is a guide for installing a [Reticulum Transport Node](https://reticulum.network) on Alpine Linux.
 
 This guide will:
