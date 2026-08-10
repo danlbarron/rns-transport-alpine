@@ -86,7 +86,7 @@ install_cronjob() {
 
   cat <<EOT >> $CRONJOB_PATH
 #!/bin/sh
-rc-service $RNS_DAEMON stop && pipx upgrade $PIPX_PACKAGE --global && rc-service $RNS_DAEMON start
+rc-service $RNS_DAEMON stop && pipx upgrade --global $PIPX_PACKAGE && rc-service $RNS_DAEMON start
 EOT
 
   chmod +x $CRONJOB_PATH
