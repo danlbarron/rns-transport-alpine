@@ -4,6 +4,8 @@
 COMMUNITY_REPO=https://dl-cdn.alpinelinux.org/alpine/latest-stable/community
 PIPX_PACKAGE=rns
 DAEMON=rnsd
+DAEMON_COMMAND=/usr/local/bin/rnsd
+DAEMON_COMMAND_ARGS=--service
 DAEMON_USER=rnsuser
 CRONJOB_PATH=/etc/periodic/daily/upgrade_rnsd
 
@@ -53,7 +55,7 @@ install_dependencies() {
     log_info 'Installed APK Dependency: pipx'
   fi
 
-  if [ ! -e /usr/local/bin/rnsd ]; then
+  if [ ! -e $DAEMON_COMMAND ]; then
     pipx install --global $PIPX_PACKAGE
     log_info 'Installed PIPX Dependency: rns'
   fi
@@ -66,16 +68,16 @@ install_daemon() {
 
   cat <<EOT >> /etc/init.d/$DAEMON
 #!/sbin/openrc-run
-command="/usr/local/bin/rnsd"
-command_args="--service"
+command="$DAEMON_COMMAND"
+command_args="$DAEMON_COMMAND_ARGS"
 command_background=true
 command_user="$DAEMON_USER"
 pidfile="/run/$(echo '${RC_SVCNAME}').pid"
 EOT
 
   chmod +x /etc/init.d/$DAEMON
-  rc-update add rnsd
-  rc-service rnsd start
+  rc-update add $DAEMON
+  rc-service $DAEMON start
   log_info "Installed Daemon: ${DAEMON}"
 }
 
