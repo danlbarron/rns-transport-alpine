@@ -3,8 +3,8 @@
 # Variables
 COMMUNITY_REPO=https://dl-cdn.alpinelinux.org/alpine/latest-stable/community
 PIPX_PACKAGE=rns
-RNS_DAEMON=rnsd
-RNS_DAEMON_USER=rnsuser
+DAEMON=rnsd
+DAEMON_USER=rnsuser
 CRONJOB_PATH=/etc/periodic/daily/upgrade_rnsd
 
 # Logging
@@ -35,10 +35,10 @@ script_prechecks() {
     exit 1
   fi
 
-  if ! id $RNS_DAEMON_USER >/dev/null 2>&1; then
-    log_error "${RNS_DAEMON_USER} not created."
+  if ! id $DAEMON_USER >/dev/null 2>&1; then
+    log_error "${DAEMON_USER} not created."
     echo 'Please run the following command and relaunch this installer.'
-    echo "adduser ${RNS_DAEMON_USER}"
+    echo "adduser ${DAEMON_USER}"
     exit 1
   fi
 }
@@ -60,23 +60,23 @@ install_dependencies() {
 }
 
 install_daemon() {
-  if [ -e /etc/init.d/$RNS_DAEMON ]; then
+  if [ -e /etc/init.d/$DAEMON ]; then
     return 0
   fi
 
-  cat <<EOT >> /etc/init.d/$RNS_DAEMON
+  cat <<EOT >> /etc/init.d/$DAEMON
 #!/sbin/openrc-run
 command="/usr/local/bin/rnsd"
 command_args="--service"
 command_background=true
-command_user="$RNS_DAEMON_USER"
+command_user="$DAEMON_USER"
 pidfile="/run/$(echo '${RC_SVCNAME}').pid"
 EOT
 
-  chmod +x /etc/init.d/$RNS_DAEMON
+  chmod +x /etc/init.d/$DAEMON
   rc-update add rnsd
   rc-service rnsd start
-  log_info "Installed Daemon: ${RNS_DAEMON}"
+  log_info "Installed Daemon: ${DAEMON}"
 }
 
 install_cronjob() {
@@ -86,7 +86,7 @@ install_cronjob() {
 
   cat <<EOT >> $CRONJOB_PATH
 #!/bin/sh
-rc-service $RNS_DAEMON stop && pipx upgrade --global $PIPX_PACKAGE && rc-service $RNS_DAEMON start
+rc-service $DAEMON stop && pipx upgrade --global $PIPX_PACKAGE && rc-service $DAEMON start
 EOT
 
   chmod +x $CRONJOB_PATH
