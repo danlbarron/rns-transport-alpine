@@ -57,7 +57,7 @@ install_dependencies() {
 
   if [ ! -e $DAEMON_COMMAND ]; then
     pipx install --global $PIPX_PACKAGE
-    log_info 'Installed PIPX Dependency: rns'
+    log_info "Installed PIPX Dependency: ${PIPX_PACKAGE}"
   fi
 }
 
