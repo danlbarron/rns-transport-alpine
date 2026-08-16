@@ -68,9 +68,9 @@ install_daemon() {
 
   cat <<EOT >> /etc/init.d/$DAEMON
 #!/sbin/openrc-run
+supervisor=supervise-daemon
 command="$DAEMON_COMMAND"
 command_args="$DAEMON_COMMAND_ARGS"
-command_background=true
 command_user="$DAEMON_USER"
 pidfile="/run/$(echo '${RC_SVCNAME}').pid"
 EOT
