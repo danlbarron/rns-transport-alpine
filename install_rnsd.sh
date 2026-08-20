@@ -89,7 +89,7 @@ install_cronjob() {
   cat <<EOT >> $CRONJOB_PATH
 #!/bin/sh
 
-if ! pipx runpip --global $PIPX_PACKAGE list --outdated | tail -n +3 | awk '{print $(echo '$1')}' | grep -q $PIPX_PACKAGE; then
+if ! pipx runpip --global $PIPX_PACKAGE list --outdated | tail -n +3 | awk '{print $(echo '$1')}' | grep -Fxq $PIPX_PACKAGE; then
   exit 0
 fi
 
